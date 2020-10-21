@@ -1,0 +1,34 @@
+﻿@using MvcStok.Models.Entity;
+@model List<TBLKATEGORILER>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_MainLayout.cshtml";
+}
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<table class="table table-bordered">
+    <tr>
+        <th>KATEGORİ ID</th>
+        <th>KATEGORİ ADI</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+
+    </tr>
+
+    <tbody>
+        @foreach (var ktgr in Model)
+        {
+        <tr>
+            <td>@ktgr.KATEGORIID</td>
+            <td>@ktgr.KATEGORIAD</td>
+            <td><a href="/Kategori/SIL/@ktgr.KATEGORIID" class="btn btn-danger">SİL</a></td>
+            <td><a href="/Kategori/KategoriGetir/@ktgr.KATEGORIID" class="btn btn-primary">GÜNCELLE</a></td>
+
+
+
+        </tr>
+        }
+    </tbody>
+
+</table>
+
+<a href="/Kategori/YeniKategori/" class="btn btn-success"> YENİ KATEGORİ EKLE</a>

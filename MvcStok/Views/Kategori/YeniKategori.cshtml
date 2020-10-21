@@ -1,0 +1,41 @@
+﻿@model MvcStok.Models.Entity.TBLKATEGORILER
+
+@{
+    ViewBag.Title = "YeniKategori";
+    Layout = "~/Views/_MainLayout.cshtml";
+}
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<form class="form-group" method="post">
+    @*
+        <div>
+            <label>KATEGORİ ADI:</label>
+            <input type="text" class="form-control" name="KATEGORIAD" />
+        </div>
+    *@
+
+    <label>KATEGORİ ADI:</label>
+    @Html.TextBoxFor(k => k.KATEGORIAD, new { @class = "form-control" })
+    @Html.ValidationMessageFor(k => k.KATEGORIAD, "", new { @style = "color:red" })
+
+
+
+    <div style="margin-top:15px">
+        <button class="btn btn-info" id="btn">KATEGORİ EKLE</button>
+    </div>
+
+    
+
+    <script>
+        $('#btn').click(function () {
+
+            swal({
+  title: "Good job!",
+  text: "You clicked the button!",
+  icon: "success",
+  button: "Aww yiss!",
+});
+        });
+    </script>
+</form>
+
